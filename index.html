@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pla Card</title>
+  <link rel="stylesheet" href="plaCard.css">
+</head>
+<body>
+
+
+  <main>
+  
+    <div id="input-div">
+       
+      <input type="text" id="takeUser" placeholder="Enter userName Only">
+      <button type="button">Check</button>
+   </div>
+
+     <div id="showPlaCard"></div> 
+
+    
+
+  </main>
+  
+ <script>
+
+const UserID = document.querySelector('#takeUser');
+const checkButton = document.querySelector('button');
+let  showPlaCard = document.querySelector('#showPlaCard');
+
+
+checkButton.addEventListener('click' , () => {
+
+ const reqUrl = `https://api.github.com/users/${UserID.value}`;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('GET' , reqUrl);
+
+  xhr.send();
+
+  xhr.onreadystatechange = function () {
+
+  if(xhr.readyState === 4){
+    const apiData = JSON.parse(this.responseText);
+    console.log(apiData);
+    if(apiData.login){
+  
+    showPlaCard.innerHTML = `<h2 id="name">Name : ${apiData.name}</h2>
+                             <img src="${apiData.avatar_url}" alt="${apiData.login + "'s img not found"}" id="img">
+                             <h2 id="followers">Followers : <span>${apiData.followers}</span> </h2>
+                             <h2 id="location">Location :  <span>${apiData.location}</span> </h2>
+                             <h2 id="following">Following : <span>${apiData.following}</span></h2>
+                             <h2 id="idAddress">visit id : <a href="https://github.com/${UserID.value}"><span id="clickMe">Click Me</span></a></h2>`;
+
+    }
+    
+    else{
+      showPlaCard.innerHTML = `<h2>No result for ${UserID.value}</h2>`;
+    }
+
+       
+    }
+
+  }
+
+
+});
+
+ </script>
+
+
+</body>
+</html>
