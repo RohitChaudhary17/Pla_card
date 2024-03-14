@@ -1,0 +1,82 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #5EBECB;
+}
+
+main{
+  width: 100%;
+  height: 100%;
+}
+
+#input-div{
+  width: 40%;
+  height: 20%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+input[type="text"]{
+
+width: 80%;
+padding: 1%;
+font-size: 1.7rem;
+font-family: sans-serif;
+border: 0.5px solid;
+border-radius: 15px;
+}
+
+button[type="button"]{
+  display: block;
+  margin-left:25% ;
+  margin-top: 2%;
+  padding: 1.5%;
+  width: 50%;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  background-color: bisque;
+  cursor: pointer;
+}
+
+#showPlaCard{
+  width: 50%;
+  margin: auto;
+  margin-top: 2%;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#name{
+  font-size: 1.5rem;
+  padding: 1%;
+}
+
+#img{
+  width: 15rem;
+  border:30px solid #5EBECB;
+  border-radius: 50%;
+  padding: 1%;
+}
+
+h2{
+   font-size: 1.rem;
+   padding: 1%;
+}
+
+#showPlaCard > h2 span{
+  font-size: 2rem;
+  color: #444444;
+  padding: 1%;
+
+}
+
+#clickMe{
+  text-decoration: none;
+}
